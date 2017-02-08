@@ -9,24 +9,24 @@
                     <div class="panel-heading">認証済み</div>
                     <div class="panel-body">
                         <div class="ver-email">
-                        <%= image_tag('check.jpg', :size =>"10x10") unless current_user.email.empty? %>
+                        <%= image_tag('check.jpg', :size =>"10x10") if current_user.email.present? %>
                             メールアドレス
                         </div>
                         <br>
                         <div class="ver-tel">
-                        <%= image_tag('check.jpg', :size =>"10x10") unless current_user.phone_number.empty? %>
+                        <%= image_tag('check.jpg', :size =>"10x10") if current_user.phone_number.present? %>
                             電話番号
                         </div>
                         <br>
                         <div class="ver-facebook">
-                        <%= image_tag('check.jpg', :size =>"10x10") unless current_user.provider.empty? %>
+                        <%= image_tag('check.jpg', :size =>"10x10") if current_user.provider.present? %>
                             Facebook
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-9 col-md-8 col-sm-12">
-                <h1>こんにちは<%= current_user.name %>です。</h1>
+                <h1>こんにちは</h1>
                 <p>自己紹介</p>
                 <%= current_user.description %>
             </div>
