@@ -14,5 +14,5 @@ class Listing < ActiveRecord::Base
 
   def average_star_rate
     reviews.count == 0 ? 0 : reviews.average(:rate).round(1)
-  end
+  end 
 end
