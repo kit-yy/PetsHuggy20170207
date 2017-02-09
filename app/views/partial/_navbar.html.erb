@@ -32,6 +32,8 @@
                 <li><%= link_to 'プロフィール', user_path(current_user) %></li>
                 <li><%= link_to 'プロフィール編集', edit_user_registration_path(current_user) %></li>
                 <li><%= link_to 'リスティング管理', listings_path %></li>
+                <li><%= link_to 'ペットを預ける', reservations_path %></li>
+                <li><%= link_to 'ペットを預かる', reserved_path %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to 'ログアウト', destroy_user_session_path , method: :delete%></li>
               </ul>
@@ -46,6 +48,8 @@
                 <li><%= link_to 'プロフィール', user_path(current_user) %></li>
                 <li><%= link_to 'プロフィール編集', edit_user_registration_path(current_user) %></li>
                 <li><%= link_to 'リスティング管理', listings_path %></li>
+                <li><%= link_to 'ペットを預ける', reservations_path %></li>
+                <li><%= link_to 'ペットを預かる', reserved_path %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to 'ログアウト', destroy_user_session_path , method: :delete%></li>
               </ul>
