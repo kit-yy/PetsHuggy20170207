@@ -43,6 +43,7 @@ before_action :authenticate_user!
   end
 
   def photos
+    @photo = Photo.new
   end
 
   def calendar
