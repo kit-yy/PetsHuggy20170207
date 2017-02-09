@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209153719) do
+ActiveRecord::Schema.define(version: 20170209154709) do
 
   create_table "listings", force: :cascade do |t|
     t.string   "home_type"
@@ -65,8 +65,10 @@ ActiveRecord::Schema.define(version: 20170209153719) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "listing_id"
   end
 
+  add_index "reviews", ["listing_id"], name: "index_reviews_on_listing_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
