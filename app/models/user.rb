@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :listings
   has_many :reservations
+  has_many :reviews
 
 
   has_attached_file :image, styles: { medium: "400x400>", thumb: "100x100>" }, default_url: "avatar.png"
