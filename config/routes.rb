@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  get 'reservations/create'
+
  resources :listings
 
   root 'pages#index'
@@ -17,6 +19,9 @@ Rails.application.routes.draw do
   resources :listings do 
     resources :reservations, only:[:create]
   end
+
+  get '/setdate' => 'reservations#setdate'
+  get '/duplicate' => 'reservations#duplicate'
 
   get 'manage-listing/:id/basics' => 'listings#basics', as:'manage_listing_basics'
   get 'manage-listing/:id/description' => 'listings#description', as:'manage_listing_description' 
