@@ -1,0 +1,25 @@
+<%= render 'partial/navbar' %>
+
+<div class="container">
+<br><br>
+    <div class="col-md-3">
+        <%= render 'partial/verticalnavbar' %>
+    </div>
+    
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                <span style="font-size:24px;">受け取り口座情報</span>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <% if @user.connected? %>
+                <%= render 'stripe/setting' %>
+            <% else %>
+                <%= render 'stripe/connect' %>
+            <% end %>
+        </div>
+    </div>
+</div>
+    

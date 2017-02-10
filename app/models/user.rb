@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
       user.image = "http://graph.facebook.com/#{auth.uid}/picture?type=large"
     end
   end
+
+  def connected?
+    !stripe_user_id.nil?
+  end
 end
