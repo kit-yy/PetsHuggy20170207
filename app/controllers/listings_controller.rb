@@ -69,6 +69,12 @@ before_action :authenticate_user!
   def publish
   end
 
+  def not_checked
+    @listing = Listing.find(params[:listing_id])
+    @listing.update(not_checked: params[:not_checked])
+    render :nothing => true
+  end
+
   private
     def listing_params
       params.require(:listing).permit(:home_type, :pet_type, :breeding_years, :pet_size, :price_pernight, :address, :listing_title, :listing_content, :active)
